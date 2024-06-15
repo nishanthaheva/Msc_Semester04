@@ -1,0 +1,32 @@
+services:
+  oracledb:
+    image: container-registry.oracle.com/database/express
+    container_name: oracle-db
+    hostname: oracledb
+    domainname: mydocker.com
+   # volumes:
+  #    - f:/docker/volumes/oracledb:/opt/oracle/oradata
+    environment:
+     # ORACLE_SID: MYCDB # Container database name
+    #  ORACLE_PDB: MYPDB # Pluggable database name      
+      ORACLE_PWD: oracle
+      ORACLE_ALLOW_REMOTE: true
+      ORACLE_DISABLE_ASYNCH_IO: true
+     # ORACLE_ENABLE_XDB: true
+     # ORACLE_CHARACTERSET: AL32UTF8
+    ports:
+    - "1521:1521"
+    - "5500:5500"
+    - "8085:8080"  
+    tty: true
+  #  extra_hosts:       - "Nish-PC:192.168.1.209"
+   # priviledged: true    
+  #  build:
+   #   context: Dockerfiles/oracle
+   #   dockerfile: Dockerfile
+   # sudo docker compose up
+   
+  
+    
+  
+    

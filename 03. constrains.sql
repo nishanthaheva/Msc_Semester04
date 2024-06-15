@@ -1,9 +1,10 @@
--- create 
+-- user id is the sutable primarykey for Users table
 ALTER TABLE users ADD  CONSTRAINT pk_users PRIMARY KEY (user_id) enable;
 
-
+-- course id is the suitable primary key for course table
 alter table course add CONSTRAINT pk_course PRIMARY KEY (course_id) enable;
 alter table course add CONSTRAINT fk_course_user_id FOREIGN KEY  (created_by) REFERENCES users(user_id);
+
 
 alter table course add CONSTRAINT uc_course_duration CHECK (course_duration between 1 and 5 ) enable;
 alter table course add CONSTRAINT uc_course_cost CHECK (cost between 300 and 2000 ) enable;

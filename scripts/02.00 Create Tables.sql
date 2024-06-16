@@ -34,7 +34,7 @@ city varchar(100),
 telephone varchar(12),
 email varchar(50),
 created_by int,
-created_on TIMESTAMP
+created_on TIMESTAMP  DEFAULT sysdate
 );
 
 
@@ -50,7 +50,7 @@ CREATE TABLE student (
   gender INT,
   company VARCHAR(400),
   credit_card_no VARCHAR(20),
-  registered_date TIMESTAMP,
+  registered_date TIMESTAMP  DEFAULT sysdate,
   created_by INT
 );
 
@@ -69,7 +69,7 @@ CREATE TABLE offering (
   instructor_id INT, 
   start_date DATE,
   is_started int,
-  created_date TIMESTAMP,
+  created_date TIMESTAMP DEFAULT sysdate,
   created_by INT 
 );
 
@@ -78,14 +78,14 @@ CREATE TABLE enrollment (
   enrolment_id INT ,
   offering_id INT,
   student_id INT ,  
-  enrollment_date TIMESTAMP,
+  enrollment_date TIMESTAMP DEFAULT sysdate,
    enrolled_by INT
 );
 
 CREATE TABLE attendance (
   offering_id INT,
   student_id INT , 
-  att_date TIMESTAMP  
+  att_date TIMESTAMP   DEFAULT sysdate
 );
 
 CREATE TABLE exam_result ( 
